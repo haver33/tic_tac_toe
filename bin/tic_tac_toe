@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require_relative "../lib/tic_tac_toe"
+require_relative "../lib/tic_tac_toe/ui"
+
+loop do
+    game = TicTacToe::Game.in_terminal
+    game.play
+
+    ui = UI::Terminal.new
+    break unless ui.play_again?
+end
